@@ -1,9 +1,9 @@
 const express = require('express')
 const app = express()
 
-app.use ('/', express.static(__dirname + '/herokulabapp/dist'))
+app.use ('', express.static(__dirname + '/herokulabapp/dist'))
 
-app.get('/', (req, res) => {
+app.get('/*', (req, res) => {
     res.sendFile(__dirname + '/herokulabapp/dist/index.html')
 })
 

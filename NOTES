@@ -1,0 +1,41 @@
+GIT HUB 
+create new repo ('myapp')
+
+HEROKU
+create new app
+deployement method => git hub => 'myapp' => connect => enable automatic deploys
+
+TERMINAL
+heroku login
+
+npm install ( node + express )
+
+=====================    index.js    =============================================
+const express = require('express')
+const app = express()
+
+app.use ('', express.static(__dirname + '/herokulabapp/dist'))
+
+app.get('/*', (req, res) => {
+    res.sendFile(__dirname + '/herokulabapp/dist/index.html')
+})
+
+
+
+const port = process.env.PORT || 3000 
+
+app.listen(port, () => console.log('Example app listening on port 3000!'))
+
+=====================================================================================
+
+create new ANGULAR PROJECT
+
+
+COTE SERVER
+npm i -S dotenv
+
+important : bien créer le .env à la racine du projet pour cacher les infos de bdd
+le .env est en gitignore automatiquement
+
+pour heroku, il faut rajouter une config vars:
+DATABASE_URL > adresse de ma BDD
